@@ -117,17 +117,8 @@
                                               "WordVariable",
                                               [
                                                 "VariableAtom",
-                                                "#",
-                                                [
-                                                  "ParameterLength",
-                                                  [
-                                                    "Word",
-                                                    "*",
-                                                    [
-                                                      [ "WordLiteral", "*" ]
-                                                    ]
-                                                  ]
-                                                ]
+                                                "*",
+                                                [ "ParameterLength" ]
                                               ]
                                             ]
                                           ]
@@ -174,15 +165,8 @@
                                             "WordVariable",
                                             [
                                               "VariableAtom",
-                                              "#",
-                                              [
-                                                "ParameterLength",
-                                                [
-                                                  "Word",
-                                                  "@",
-                                                  [ [ "WordLiteral", "@" ] ]
-                                                ]
-                                              ]
+                                              "@",
+                                              [ "ParameterLength" ]
                                             ]
                                           ]
                                         ]
@@ -229,15 +213,8 @@
                                           "WordVariable",
                                           [
                                             "VariableAtom",
-                                            "#",
-                                            [
-                                              "ParameterLength",
-                                              [
-                                                "Word",
-                                                "foo",
-                                                [ [ "WordLiteral", "foo" ] ]
-                                              ]
-                                            ]
+                                            "foo",
+                                            [ "ParameterLength" ]
                                           ]
                                         ]
                                       ]
