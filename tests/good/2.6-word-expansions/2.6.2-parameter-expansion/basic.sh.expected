@@ -40,20 +40,11 @@
                                       "${#parameter}",
                                       [
                                         [
-                                          "WordDoubleQuoted",
+                                          "WordVariable",
                                           [
-                                            "Word",
-                                            "${#parameter}",
-                                            [
-                                              [
-                                                "WordVariable",
-                                                [
-                                                  "VariableAtom",
-                                                  "parameter",
-                                                  [ "ParameterLength" ]
-                                                ]
-                                              ]
-                                            ]
+                                            "VariableAtom",
+                                            "parameter",
+                                            [ "ParameterLength" ]
                                           ]
                                         ]
                                       ]
