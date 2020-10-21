@@ -435,7 +435,6 @@ rule token current = parse
     debug ~rule:"arithmetic-exp" lexbuf current;
     let current = push_arith current in
     let current = next_double_rparen 1 current lexbuf in
-    let current = pop_arith current in
     token current lexbuf
 }
 

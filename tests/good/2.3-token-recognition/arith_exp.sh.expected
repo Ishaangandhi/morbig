@@ -2,9 +2,6 @@
   "Program_LineBreak_CompleteCommands_LineBreak",
   [ "LineBreak_Empty" ],
   [
-<<<<<<< HEAD
-    "CompleteCommands_CompleteCommand",
-=======
     "CompleteCommands_CompleteCommands_NewlineList_CompleteCommand",
     [
       "CompleteCommands_CompleteCommand",
@@ -63,7 +60,6 @@
       ]
     ],
     [ "NewLineList_NewLine" ],
->>>>>>> arith
     [
       "CompleteCommand_CList",
       [
@@ -86,27 +82,12 @@
                     "CmdSuffix_Word",
                     [
                       "Word",
-<<<<<<< HEAD
-                      "$((1 * $((2*3 ))))",
-=======
                       "$((x+=`echo 2`))",
->>>>>>> arith
                       [
                         [
                           "WordArith",
                           [
                             "Word",
-<<<<<<< HEAD
-                            "1 * $((2*3 ))",
-                            [
-                              [ "WordLiteral", "1 * " ],
-                              [
-                                "WordArith",
-                                [
-                                  "Word",
-                                  "2*3 ",
-                                  [ [ "WordLiteral", "2*3 " ] ]
-=======
                             "x+=`echo 2`",
                             [
                               [ "WordLiteral", "x+=" ],
@@ -165,7 +146,6 @@
                                     ]
                                   ],
                                   [ "LineBreak_Empty" ]
->>>>>>> arith
                                 ]
                               ]
                             ]
