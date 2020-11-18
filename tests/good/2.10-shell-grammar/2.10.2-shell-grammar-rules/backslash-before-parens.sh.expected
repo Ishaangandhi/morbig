@@ -1,0 +1,273 @@
+[
+  "Program_LineBreak_CompleteCommands_LineBreak",
+  [ "LineBreak_Empty" ],
+  [
+    "CompleteCommands_CompleteCommands_NewlineList_CompleteCommand",
+    [
+      "CompleteCommands_CompleteCommands_NewlineList_CompleteCommand",
+      [
+        "CompleteCommands_CompleteCommand",
+        [
+          "CompleteCommand_CList",
+          [
+            "CList_AndOr",
+            [
+              "AndOr_Pipeline",
+              [
+                "Pipeline_PipeSequence",
+                [
+                  "PipeSequence_Command",
+                  [
+                    "Command_SimpleCommand",
+                    [
+                      "SimpleCommand_CmdName_CmdSuffix",
+                      [
+                        "CmdName_Word",
+                        [ "Word", "test", [ [ "WordName", "test" ] ] ]
+                      ],
+                      [
+                        "CmdSuffix_CmdSuffix_Word",
+                        [
+                          "CmdSuffix_CmdSuffix_Word",
+                          [
+                            "CmdSuffix_CmdSuffix_Word",
+                            [
+                              "CmdSuffix_CmdSuffix_Word",
+                              [
+                                "CmdSuffix_CmdSuffix_Word",
+                                [
+                                  "CmdSuffix_CmdSuffix_Word",
+                                  [
+                                    "CmdSuffix_CmdSuffix_Word",
+                                    [
+                                      "CmdSuffix_Word",
+                                      [
+                                        "Word",
+                                        "\\(",
+                                        [ [ "WordLiteral", "\\(" ] ]
+                                      ]
+                                    ],
+                                    [
+                                      "Word",
+                                      "5",
+                                      [ [ "WordLiteral", "5" ] ]
+                                    ]
+                                  ],
+                                  [
+                                    "Word",
+                                    "-ne",
+                                    [ [ "WordLiteral", "-ne" ] ]
+                                  ]
+                                ],
+                                [ "Word", "5", [ [ "WordLiteral", "5" ] ] ]
+                              ],
+                              [ "Word", "\\)", [ [ "WordLiteral", "\\)" ] ] ]
+                            ],
+                            [ "Word", "-o", [ [ "WordLiteral", "-o" ] ] ]
+                          ],
+                          [ "Word", "-n", [ [ "WordLiteral", "-n" ] ] ]
+                        ],
+                        [ "Word", "hello", [ [ "WordName", "hello" ] ] ]
+                      ]
+                    ]
+                  ]
+                ]
+              ]
+            ]
+          ]
+        ]
+      ],
+      [ "NewLineList_NewLine" ],
+      [
+        "CompleteCommand_CList",
+        [
+          "CList_AndOr",
+          [
+            "AndOr_Pipeline",
+            [
+              "Pipeline_PipeSequence",
+              [
+                "PipeSequence_Command",
+                [
+                  "Command_SimpleCommand",
+                  [
+                    "SimpleCommand_CmdName_CmdSuffix",
+                    [
+                      "CmdName_Word",
+                      [ "Word", "echo", [ [ "WordName", "echo" ] ] ]
+                    ],
+                    [
+                      "CmdSuffix_Word",
+                      [
+                        "Word",
+                        "\"hello world\\n\"",
+                        [
+                          [
+                            "WordDoubleQuoted",
+                            [
+                              "Word",
+                              "hello world\\n",
+                              [ [ "WordLiteral", "hello world\\n" ] ]
+                            ]
+                          ]
+                        ]
+                      ]
+                    ]
+                  ]
+                ]
+              ]
+            ]
+          ]
+        ]
+      ]
+    ],
+    [ "NewLineList_NewLine" ],
+    [
+      "CompleteCommand_CList",
+      [
+        "CList_CList_SeparatorOp_AndOr",
+        [
+          "CList_AndOr",
+          [
+            "AndOr_Pipeline",
+            [
+              "Pipeline_PipeSequence",
+              [
+                "PipeSequence_Command",
+                [
+                  "Command_CompoundCommand",
+                  [
+                    "CompoundCommand_Subshell",
+                    [
+                      "Subshell_Lparen_CompoundList_Rparen",
+                      [
+                        "CompoundList_LineBreak_Term",
+                        [ "LineBreak_Empty" ],
+                        [
+                          "Term_Term_Separator_AndOr",
+                          [
+                            "Term_AndOr",
+                            [
+                              "AndOr_Pipeline",
+                              [
+                                "Pipeline_PipeSequence",
+                                [
+                                  "PipeSequence_Command",
+                                  [
+                                    "Command_SimpleCommand",
+                                    [
+                                      "SimpleCommand_CmdName_CmdSuffix",
+                                      [
+                                        "CmdName_Word",
+                                        [
+                                          "Word",
+                                          "trap",
+                                          [ [ "WordName", "trap" ] ]
+                                        ]
+                                      ],
+                                      [
+                                        "CmdSuffix_CmdSuffix_Word",
+                                        [
+                                          "CmdSuffix_Word",
+                                          [
+                                            "Word",
+                                            "'echo bye'",
+                                            [
+                                              [
+                                                "WordSingleQuoted",
+                                                [
+                                                  "Word",
+                                                  "echo bye",
+                                                  [
+                                                    [
+                                                      "WordLiteral",
+                                                      "echo bye"
+                                                    ]
+                                                  ]
+                                                ]
+                                              ]
+                                            ]
+                                          ]
+                                        ],
+                                        [
+                                          "Word",
+                                          "SIGTERM",
+                                          [ [ "WordName", "SIGTERM" ] ]
+                                        ]
+                                      ]
+                                    ]
+                                  ]
+                                ]
+                              ]
+                            ]
+                          ],
+                          [
+                            "Separator_SeparatorOp_LineBreak",
+                            [ "SeparatorOp_Semicolon" ],
+                            [ "LineBreak_Empty" ]
+                          ],
+                          [
+                            "AndOr_Pipeline",
+                            [
+                              "Pipeline_PipeSequence",
+                              [
+                                "PipeSequence_Command",
+                                [
+                                  "Command_SimpleCommand",
+                                  [
+                                    "SimpleCommand_CmdName_CmdSuffix",
+                                    [
+                                      "CmdName_Word",
+                                      [
+                                        "Word",
+                                        "echo",
+                                        [ [ "WordName", "echo" ] ]
+                                      ]
+                                    ],
+                                    [
+                                      "CmdSuffix_Word",
+                                      [
+                                        "Word",
+                                        "hi",
+                                        [ [ "WordName", "hi" ] ]
+                                      ]
+                                    ]
+                                  ]
+                                ]
+                              ]
+                            ]
+                          ]
+                        ]
+                      ]
+                    ]
+                  ]
+                ]
+              ]
+            ]
+          ]
+        ],
+        [ "SeparatorOp_Uppersand" ],
+        [
+          "AndOr_Pipeline",
+          [
+            "Pipeline_PipeSequence",
+            [
+              "PipeSequence_Command",
+              [
+                "Command_SimpleCommand",
+                [
+                  "SimpleCommand_CmdName",
+                  [
+                    "CmdName_Word",
+                    [ "Word", "wait", [ [ "WordName", "wait" ] ] ]
+                  ]
+                ]
+              ]
+            ]
+          ]
+        ]
+      ]
+    ]
+  ],
+  [ "LineBreak_Empty" ]
+]
