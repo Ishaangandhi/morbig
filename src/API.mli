@@ -26,6 +26,17 @@ val parse_file: string -> CST.program
    the script source code is provided as a string. *)
 val parse_string: string -> string -> CST.program
 
+(** [parse_string_interactive on_ps2 lexbuf state] reads input
+      from the lexbuf, prompting with on_ps2 on incomplete commands at newlines.
+      If state is not None, the parser will use that state to continue parsing
+      from lexbuf. It returns the first command read, along with the lexbuf, and parser state.
+   *)
+val parse_string_interactive :
+  (unit -> unit) ->
+  Lexing.lexbuf ->
+  Engine.state option ->
+  Lexing.lexbuf * Engine.state * CST.program CST.located
+
 (** {3 Serialization of CST} *)
 
 (** [load_binary_cst cin] retrieves a serialized CST from

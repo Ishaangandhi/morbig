@@ -87,9 +87,52 @@ let parse_input_files_provided_on_command_line () =
     end;
   List.iter parse_one_file (Options.input_files ())
 
+let parse_interactively_via_stdin filename =
+  let on_ps1 () = Printf.eprintf "%!$ %!";  in
+  let on_ps2 () = Printf.eprintf "%!  > %!" in
+  let csts = ref [] in
+  let lexbuf = ref @@  (Morbig__ExtPervasives.lexing_make_interactive filename) in
+  let parser_state = ref None in
+  try
+    while true do
+    (
+        incr nb_inputs;
+        try
+          on_ps1 ();
+          let next_lexbuf, next_parser_state, next_cst =
+            Engine.parse_interactively on_ps2 false PrelexerState.initial_state 
+              !lexbuf !parser_state
+          in
+          parser_state := Some next_parser_state;
+          lexbuf := next_lexbuf;
+          csts := next_cst :: !csts
+        with e ->
+          incr nb_inputs_erroneous;
+          if Options.continue_after_error () then
+            save_error filename (Errors.string_of_error e)
+          else (
+            output_string stderr (Errors.string_of_error e ^ "\n");
+            exit 1
+          )
+    )
+    done
+  with End_of_file -> 
+    csts := List.rev !csts;
+    let cst = Morbig__ExtPervasives.reduce CSTHelpers.empty_program CSTHelpers.concat_programs !csts in
+    save filename cst.CST.value
+
 let parse_input_files () =
   if Options.from_stdin () then
     parse_input_files_provided_via_stdin ()
+  else if Options.interactive () then
+  (
+    if List.length (Options.input_files ()) != 1 then begin
+      Printf.eprintf "morbig: must specify exactly one filename for interactive session.\n";
+      exit 1
+    end;
+    let filename = List.hd @@ Options.input_files () in
+    parse_interactively_via_stdin filename
+  )
   else
     parse_input_files_provided_on_command_line ()
 

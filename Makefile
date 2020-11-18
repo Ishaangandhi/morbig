@@ -38,6 +38,12 @@ check: build
 	  echo "$$output" | tee tests.org ; \
 	  exit $$status
 
+check-interactive: build
+	@ output=$$(./tests/run-interactive 2>&1) ;     \
+	  status=$$? ;                      \
+	  echo "$$output" | tee tests.org ; \
+	  exit $$status
+
 examples:
 	find examples -name 'Makefile' | \
 	    while read file; do dirname "$$file"; done | \

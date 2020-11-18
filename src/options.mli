@@ -51,3 +51,8 @@ val analyze_command_line_arguments : unit -> unit
 
 (* tell whether debugging mode is activated. *)
 val debug : unit -> bool
+
+(* tell whether interactive mode is activated. *)
+val interactive : unit -> bool
+val disable_interactive : unit -> unit
+val enable_interactive : unit -> unit

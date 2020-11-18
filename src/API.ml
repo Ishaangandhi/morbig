@@ -15,6 +15,8 @@ let parse_file = Scripts.parse_file
 
 let parse_string = Scripts.parse_string
 
+let parse_string_interactive = Scripts.parse_string_interactive
+
 let load_binary_cst cin =
   (input_value cin : CST.program)
 

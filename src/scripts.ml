@@ -49,6 +49,10 @@ let parse_string filename contents =
   let cst = Engine.parse false PrelexerState.initial_state lexbuf in
   cst.CST.value
 
+let parse_string_interactive on_ps2 lexbuf state =
+  Engine.parse_interactively on_ps2 false PrelexerState.initial_state lexbuf
+    state
+
 let parse_file filename =
   let cin = open_in_bin filename in
   let cst =

@@ -266,6 +266,12 @@ let lexing_make filename contents = Lexing.(
   lexbuf
 )
 
+let lexing_make_interactive filename = Lexing.(
+  let lexbuf = Lexing.from_channel ~with_positions:true stdin in
+  lexbuf.lex_curr_p <- { lexbuf.lex_curr_p with pos_fname = filename };
+  lexbuf
+)
+
 let ( <$> ) x f =
   f (); x
 

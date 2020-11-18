@@ -62,6 +62,11 @@ let error_on_unspecified () = !_error_on_unspecified
 let _debug = ref false
 let debug () = !_debug
 
+let _interactive = ref 0
+let interactive () = !_interactive > 0
+let disable_interactive () = _interactive := !_interactive - 1
+let enable_interactive () = _interactive := !_interactive + 1
+
 let usage_msg = "\
 Usage: morbig [options] file...
 "
@@ -95,6 +100,9 @@ let analyze_command_line_arguments () = Arg.(
 
       "--debug", Set _debug,
       " Activate debugging information.";
+
+      "--interactive", Unit enable_interactive,
+      " Run Morbig in interactive mode.";
 
       "--version", Unit show_version_and_exit,
       " Show version number and exit."
