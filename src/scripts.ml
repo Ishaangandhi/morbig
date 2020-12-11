@@ -50,8 +50,15 @@ let parse_string filename contents =
   cst.CST.value
 
 let parse_string_interactive on_ps2 lexbuf state =
-  Engine.parse_interactively on_ps2 false PrelexerState.initial_state lexbuf
-    state
+  (* If the interactive option is already set, it must have been set from
+    a command line flag. If it hasn't yet been set, we'll need to set
+    and unset it ourselves.  *)
+  let interactive_enalbed_from_flag = Options.interactive () in
+  if not interactive_enalbed_from_flag then Options.enable_interactive ();
+  let parse_results = Engine.parse_interactively on_ps2 false PrelexerState.initial_state lexbuf
+    state in
+  if not interactive_enalbed_from_flag then Options.disable_interactive ();
+  parse_results
 
 let parse_file filename =
   let cin = open_in_bin filename in
