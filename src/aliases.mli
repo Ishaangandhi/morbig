@@ -20,6 +20,16 @@ type aliases = t
 (** [empty] is an empty alias table. *)
 val empty : t
 
+(** [bind_aliases to_bind aliases] returns an alias table obtained from
+    [aliases] by adding all entries from [to_bind]. *)
+val bind_aliases : 
+  (string * string) list -> aliases -> aliases
+
+(** [unbind_aliases to_unbind aliases] returns an alias table obtained from
+    [aliases] by omitting all entries from [to_unbind]. *)
+val unbind_aliases :
+  string list -> aliases -> aliases
+
 (** [interpret aliases cst] traverses [cst] to check that there are no
     alias or unalias invocations in a nested command (that is, a
     compound command, or a function definition). These are allowed in

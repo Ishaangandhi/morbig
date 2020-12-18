@@ -201,7 +201,7 @@ let parse_loop partial (module Lexer : Lexer) state =
             parse csts { aliases; checkpoint }
         and interpret_alias_command: type a. a symbol * a -> _ = function
           | N N_complete_command, cst ->
-             let aliases = Aliases.interpret aliases cst in
+             let aliases = if Options.interactive () then aliases else Aliases.interpret aliases cst in
              let checkpoint = resume checkpoint in
              parse csts { aliases; checkpoint }
           | _ ->
